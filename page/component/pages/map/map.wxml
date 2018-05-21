@@ -1,0 +1,11 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'map'}}"></template>
+    <view class="page-body">
+        <view class="page-section page-section-gap">
+            <map covers="{{covers}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" style="width: 100%; height: 300px;"></map>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

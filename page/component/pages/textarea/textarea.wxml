@@ -1,0 +1,20 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'textarea'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-section-title">输入区域高度自适应，不会出现滚动条</view>
+            <view class="textarea-wrp">
+                <textarea autoHeight bindblur="bindTextAreaBlur"></textarea>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">这是一个可以自动聚焦的textarea</view>
+            <view class="textarea-wrp">
+                <textarea autoFocus="true" style="height: 3em"></textarea>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

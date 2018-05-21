@@ -1,0 +1,6 @@
+@import "../../../API/pages/get-system-info/get-system-info.wxss";
+
+.picker {
+    padding: 19rpx 26rpx;
+    background-color: #FFFFFF;
+}

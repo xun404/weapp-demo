@@ -1,0 +1,22 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'getNetworkType'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-body-info">
+                <view class="page-body-title">网络状态</view>
+                <block wx:if="{{hasNetworkType===false}}">
+                    <text class="page-body-text">未获取</text>
+                    <text class="page-body-text">点击绿色按钮可获取网络状态</text>
+                </block>
+                <text class="page-body-text-network-type" wx:if="{{hasNetworkType===true}}">{{networkType}}</text>
+            </view>
+            <view class="btn-area">
+                <button bindtap="getNetworkType" type="primary">获取手机网络状态</button>
+                <button bindtap="clear">清空</button>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

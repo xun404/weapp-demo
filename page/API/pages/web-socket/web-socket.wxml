@@ -1,0 +1,27 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'WebSocket'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">Socket状态</view>
+                    <view class="weui-cell__ft">
+                        <switch bindchange="toggleSocket" disabled="{{!hasLogin}}"></switch>
+                    </view>
+                </view>
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">消息</view>
+                    <view class="weui-cell__ft">
+            Hello, 小程序!
+          </view>
+                </view>
+            </view>
+        </view>
+        <view class="btn-area">
+            <button bindtap="sendMessage" disabled="{{socketStatus!='connected'}}" loading="{{loading}}" size="40" type="primary">点我发送</button>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

@@ -1,0 +1,26 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'saveFile'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-body-info">
+                <image class="image" mode="aspectFit" src="{{tempFilePath}}" wx:if="{{tempFilePath!=''}}"></image>
+                <image class="image" mode="aspectFit" src="{{savedFilePath}}" wx:if="{{tempFilePath===''&&savedFilePath!=''}}"></image>
+                <block wx:if="{{tempFilePath===''&&savedFilePath===''}}">
+                    <view bindtap="chooseImage" class="image-plus image-plus-nb">
+                        <view class="image-plus-horizontal"></view>
+                        <view class="image-plus-vertical"></view>
+                    </view>
+                    <view class="image-plus-text">请选择文件</view>
+                </block>
+            </view>
+            <view class="btn-area">
+                <button bindtap="saveFile" type="primary">保存文件</button>
+                <button bindtap="clear">删除文件</button>
+            </view>
+        </view>
+    </view>
+    <modal noCancel bindconfirm="confirm" hidden="{{dialog.hidden}}" title="{{dialog.title}}">{{dialog.content}}</modal>
+    <template is="foot" data></template>
+</view>

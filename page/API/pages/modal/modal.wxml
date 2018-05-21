@@ -1,0 +1,12 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'modal'}}"></template>
+    <view class="page-body">
+        <view class="btn-area">
+            <button bindtap="modalTap" type="default">有标题的modal</button>
+            <button bindtap="noTitlemodalTap" type="default">无标题的modal</button>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

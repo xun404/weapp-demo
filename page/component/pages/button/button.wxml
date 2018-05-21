@@ -1,0 +1,26 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'button'}}"></template>
+    <view class="page-body">
+        <view class="btn-area" id="buttonContainer">
+            <button type="primary">页面主操作 Normal</button>
+            <button loading="true" type="primary">页面主操作 Loading</button>
+            <button disabled="true" type="primary">页面主操作 Disabled</button>
+            <button type="default">页面次要操作 Normal</button>
+            <button disabled="true" type="default">页面次要操作 Disabled</button>
+            <button type="warn">警告类操作 Normal</button>
+            <button disabled="true" type="warn">警告类操作 Disabled</button>
+            <view class="button-sp-area">
+                <button plain="true" type="primary">按钮</button>
+                <button disabled="true" plain="true" type="primary">不可点击的按钮</button>
+                <button plain="true" type="default">按钮</button>
+                <button disabled="true" plain="true" type="default">按钮</button>
+                <button class="mini-btn" size="mini" type="primary">按钮</button>
+                <button class="mini-btn" size="mini" type="default">按钮</button>
+                <button class="mini-btn" size="mini" type="warn">按钮</button>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

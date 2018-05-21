@@ -1,0 +1,24 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'createAnimation'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="animation-element-wrapper">
+                <view animation="{{animation}}" class="animation-element"></view>
+            </view>
+            <scroll-view class="animation-buttons" scrollY="true">
+                <button bindtap="rotate" class="animation-button">旋转</button>
+                <button bindtap="scale" class="animation-button">缩放</button>
+                <button bindtap="translate" class="animation-button">移动</button>
+                <button bindtap="skew" class="animation-button">倾斜</button>
+                <button bindtap="rotateAndScale" class="animation-button">旋转并缩放</button>
+                <button bindtap="rotateThenScale" class="animation-button">旋转后缩放</button>
+                <button bindtap="all" class="animation-button">同时展示全部</button>
+                <button bindtap="allInQueue" class="animation-button">顺序展示全部</button>
+                <button bindtap="reset" class="animation-button animation-button-reset">还原</button>
+            </scroll-view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

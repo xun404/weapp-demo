@@ -1,0 +1,5 @@
+@import "../get-system-info/get-system-info.wxss";
+
+.weui-label {
+    width: 5em;
+}

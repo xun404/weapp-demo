@@ -1,0 +1,34 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'scroll-view'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-section-title">
+                <text>Vertical Scroll
+纵向滚动</text>
+            </view>
+            <view class="page-section-spacing">
+                <scroll-view bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" scrollIntoView="{{toView}}" scrollTop="{{scrollTop}}" scrollY="true" style="height: 300rpx;">
+                    <view class="scroll-view-item demo-text-1" id="demo1"></view>
+                    <view class="scroll-view-item demo-text-2" id="demo2"></view>
+                    <view class="scroll-view-item demo-text-3" id="demo3"></view>
+                </scroll-view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">
+                <text>Horizontal Scroll
+横向滚动</text>
+            </view>
+            <view class="page-section-spacing">
+                <scroll-view bindscroll="scroll" class="scroll-view_H" scrollX="true" style="width: 100%">
+                    <view class="scroll-view-item_H demo-text-1" id="demo1"></view>
+                    <view class="scroll-view-item_H demo-text-2" id="demo2"></view>
+                    <view class="scroll-view-item_H demo-text-3" id="demo3"></view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

@@ -1,0 +1,15 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'createContext'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <canvas canvasId="canvas" class="canvas-element"></canvas>
+            <scroll-view class="canvas-buttons" scrollY="true">
+                <button bindtap="{{method}}" class="canvas-button" wx:for="{{methods}}" wx:for-item="method">{{method}}</button>
+                <button bindtap="toTempFilePath" class="canvas-button" type="primary">toTempFilePath</button>
+            </scroll-view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

@@ -1,0 +1,15 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'makePhoneCall'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="desc">请在下方输入电话号码</view>
+            <input bindinput="bindInput" class="input" name="input" type="number"></input>
+            <view class="btn-area">
+                <button bindtap="makePhoneCall" disabled="{{disabled}}" type="primary">拨打</button>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

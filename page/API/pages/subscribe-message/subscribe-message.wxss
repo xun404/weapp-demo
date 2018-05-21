@@ -1,0 +1,6 @@
+@import "../get-system-info/get-system-info.wxss";
+
+.page-body-title {
+    font-size: 60rpx;
+    line-height: 1;
+}

@@ -1,0 +1,34 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'get/set/clearStorage'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">key</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="keyChange" class="weui-input" name="key" placeholder="请输入key" type="text" value="{{key}}"></input>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">value</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="dataChange" class="weui-input" name="data" placeholder="请输入value" type="text" value="{{data}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button bindtap="setStorage" type="primary">存储数据</button>
+                <button bindtap="getStorage">读取数据</button>
+                <button bindtap="clearStorage">清理数据</button>
+            </view>
+        </view>
+    </view>
+    <modal noCancel bindconfirm="confirm" hidden="{{dialog.hidden}}" title="{{dialog.title}}">{{dialog.content}}</modal>
+    <template is="foot" data></template>
+</view>

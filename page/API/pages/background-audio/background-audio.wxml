@@ -1,0 +1,34 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'backgroundAudio'}}"></template>
+    <view class="page-section">
+        <view class="page-body-info">
+            <text class="time-big">{{formatedPlayTime}}</text>
+            <slider bindchange="seek" class="slider" max="269" min="0" step="1" value="{{playTime}}"></slider>
+            <view class="play-time">
+                <text>00:00</text>
+                <text>04:29</text>
+            </view>
+        </view>
+        <view class="page-body-text tc">注意：离开当前页面后背景音乐将保持播放，但退出小程序将停止</view>
+        <view class="page-body-buttons">
+            <block wx:if="{{playing===true}}">
+                <view bindtap="stop" class="page-body-button">
+                    <image src="/image/stop.png"></image>
+                </view>
+                <view bindtap="pause" class="page-body-button">
+                    <image src="/image/pause.png"></image>
+                </view>
+            </block>
+            <block wx:if="{{playing===false}}">
+                <view class="page-body-button"></view>
+                <view bindtap="play" class="page-body-button">
+                    <image src="/image/play.png"></image>
+                </view>
+            </block>
+            <view class="page-body-button"></view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

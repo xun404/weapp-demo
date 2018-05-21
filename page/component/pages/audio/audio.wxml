@@ -1,0 +1,11 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'audio'}}"></template>
+    <view class="page-body">
+        <view class="page-section page-section-gap" style="text-align: center;">
+            <audio controls action="{{audioAction}}" author="{{current.author}}" name="{{current.name}}" poster="{{current.poster}}" src="{{current.src}}" style="text-align: left"></audio>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

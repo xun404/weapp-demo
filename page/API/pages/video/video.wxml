@@ -1,0 +1,51 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'chooseVideo'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">视频来源</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="sourceTypeChange" range="{{sourceType}}" value="{{sourceTypeIndex}}">
+                            <view class="weui-input">{{sourceType[sourceTypeIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">摄像头</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="cameraChange" range="{{camera}}" value="{{cameraIndex}}">
+                            <view class="weui-input">{{camera[cameraIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">拍摄长度</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="durationChange" range="{{duration}}" value="{{durationIndex}}">
+                            <view class="weui-input">{{duration[durationIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="page-body-info">
+                <block wx:if="{{src===''}}">
+                    <view bindtap="chooseVideo" class="image-plus image-plus-nb">
+                        <view class="image-plus-horizontal"></view>
+                        <view class="image-plus-vertical"></view>
+                    </view>
+                    <view class="image-plus-text">添加视频</view>
+                </block>
+                <video class="video" src="{{src}}" wx:if="{{src!=''}}"></video>
+            </view>
+        </view>
+    </view>
+</view>

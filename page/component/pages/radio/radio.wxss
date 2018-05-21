@@ -1,0 +1,5 @@
+@import "../../../API/pages/get-system-info/get-system-info.wxss";
+
+.radio {
+    margin-right: 20rpx;
+}

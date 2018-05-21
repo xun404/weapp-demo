@@ -1,0 +1,88 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'input'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="weui-cells__title">可以自动聚焦的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input autoFocus class="weui-input" placeholder="将会获取焦点"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">控制最大输入长度的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">实时获取输入值：{{inputValue}}</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input bindinput="bindKeyInput" class="weui-input" maxlength="10" placeholder="输入同步到view中"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">控制输入的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input bindinput="bindReplaceInput" class="weui-input" placeholder="连续的两个1会变成2"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">控制键盘的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input bindinput="bindHideKeyboard" class="weui-input" placeholder="输入123自动收起键盘"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">数字输入的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input class="weui-input" placeholder="这是一个数字输入框" type="number"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">密码输入的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input password class="weui-input" placeholder="这是一个密码输入框" type="text"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">带小数点的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input class="weui-input" placeholder="带小数点的数字键盘" type="digit"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">身份证输入的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input class="weui-input" placeholder="身份证输入键盘" type="idcard"></input>
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells__title">控制占位符颜色的input</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <input class="weui-input" placeholder="占位符字体是红色的" placeholderStyle="color:#F76260"></input>
+                </view>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

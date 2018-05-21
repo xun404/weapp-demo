@@ -1,0 +1,22 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'getLocation'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-body-info">
+                <text class="page-body-text-small">当前位置经纬度</text>
+                <text class="page-body-text" wx:if="{{hasLocation===false}}">未获取</text>
+                <view class="page-body-text-location" wx:if="{{hasLocation===true}}">
+                    <text>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</text>
+                    <text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</text>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button bindtap="getLocation" type="primary">获取位置</button>
+                <button bindtap="clear">清空</button>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

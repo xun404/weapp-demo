@@ -1,0 +1,46 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'templateMessage'}}"></template>
+    <form bindsubmit="submitForm" class="page-body" reportSubmit="true">
+        <view class="weui-cells__title">点击提交，发送示例模板消息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">示例地点</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" disabled="{{true}}" name="address" type="text" value="{{formData.address}}"></input>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">示例时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" disabled="{{true}}" name="time" type="text" value="{{formData.time}}"></input>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">示例物品</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" disabled="{{true}}" name="name" type="text" value="{{formData.name}}"></input>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">示例单号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" disabled="{{true}}" name="serial" type="text" value="{{formData.serial}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="btn-area">
+            <button formType="submit" loading="{{loading}}" size="40" type="primary">点我提交</button>
+        </view>
+    </form>
+    <template is="foot" data></template>
+</view>

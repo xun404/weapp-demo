@@ -1,0 +1,15 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'onNetworkStatusChange'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-body-info">
+                <view class="page-body-title">网络状态</view>
+                <text class="page-body-text" wx:if="{{isConnected===false}}">没有网络连接</text>
+                <text class="page-body-text-network-type" wx:if="{{isConnected===true}}">{{networkType}}</text>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

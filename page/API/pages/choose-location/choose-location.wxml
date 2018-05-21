@@ -1,0 +1,25 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'chooseLocation'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-body-info">
+                <text class="page-body-text-small">当前位置信息</text>
+                <text class="page-body-text" wx:if="{{hasLocation===false}}">未选择位置</text>
+                <block wx:if="{{hasLocation===true}}">
+                    <text class="page-body-text">{{locationAddress}}</text>
+                    <view class="page-body-text-location">
+                        <text>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</text>
+                        <text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</text>
+                    </view>
+                </block>
+            </view>
+            <view class="btn-area">
+                <button bindtap="chooseLocation" type="primary">选择位置</button>
+                <button bindtap="clear">清空</button>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

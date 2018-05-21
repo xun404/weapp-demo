@@ -1,0 +1,66 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'choose/previewImage'}}"></template>
+    <view class="page-body">
+        <form>
+            <view class="page-section">
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">图片来源</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <picker bindchange="sourceTypeChange" mode="selector" range="{{sourceType}}" value="{{sourceTypeIndex}}">
+                                <view class="weui-input">{{sourceType[sourceTypeIndex]}}</view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">图片质量</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <picker bindchange="sizeTypeChange" mode="selector" range="{{sizeType}}" value="{{sizeTypeIndex}}">
+                                <view class="weui-input">{{sizeType[sizeTypeIndex]}}</view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">数量限制</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <picker bindchange="countChange" mode="selector" range="{{count}}" value="{{countIndex}}">
+                                <view class="weui-input">{{count[countIndex]}}</view>
+                            </picker>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-cells">
+                    <view class="weui-cell">
+                        <view class="weui-cell__bd">
+                            <view class="weui-uploader">
+                                <view class="weui-uploader__hd">
+                                    <view class="weui-uploader__title">点击可预览选好的图片</view>
+                                    <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>
+                                </view>
+                                <view class="weui-uploader__bd">
+                                    <view class="weui-uploader__files">
+                                        <view class="weui-uploader__file" wx:for="{{imageList}}" wx:for-item="image">
+                                            <image bindtap="previewImage" class="weui-uploader__img" data-src="{{image}}" src="{{image}}"></image>
+                                        </view>
+                                    </view>
+                                    <view class="weui-uploader__input-box">
+                                        <view bindtap="chooseImage" class="weui-uploader__input"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </form>
+    </view>
+    <template is="foot" data></template>
+</view>

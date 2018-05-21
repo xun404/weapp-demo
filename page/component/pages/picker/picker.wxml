@@ -1,0 +1,49 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'picker'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="weui-cells__title">地区选择器</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">当前选择</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+                            <view class="weui-input">{{array[index]}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells__title">时间选择器</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">当前选择</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindTimeChange" end="21:01" mode="time" start="09:01" value="{{time}}">
+                            <view class="weui-input">{{time}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells__title">日期选择器</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">当前选择</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindDateChange" end="2017-09-01" mode="date" start="2015-09-01" value="{{date}}">
+                            <view class="weui-input">{{date}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

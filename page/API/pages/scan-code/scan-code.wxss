@@ -1,0 +1,6 @@
+@import "../get-system-info/get-system-info.wxss";
+
+.weui-cell__bd {
+    min-height: 48rpx;
+    word-break: break-all;
+}

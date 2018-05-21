@@ -1,0 +1,11 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'scanCode'}}"></template>
+    <view class="page-body">
+        <view class="btn-area">
+            <button type="primary">联系客服</button>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

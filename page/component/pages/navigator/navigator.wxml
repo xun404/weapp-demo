@@ -1,0 +1,16 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'navigator'}}"></template>
+    <view class="page-body">
+        <view class="btn-area">
+            <navigator hoverClass="navigator-hover" url="navigate?title=navigate">
+                <button type="default">跳转到新页面</button>
+            </navigator>
+            <navigator redirect hoverClass="other-navigator-hover" url="redirect?title=redirect">
+                <button type="default">在当前页打开</button>
+            </navigator>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>
