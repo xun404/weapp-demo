@@ -8,14 +8,14 @@ Page({
         function e() {
             wx.getUserInfo({
                 success: function(s) {
-                    a.setData({
+                    n.setData({
                         hasUserInfo: !0,
                         userInfo: s.userInfo
-                    }), a.update();
+                    });
                 }
             });
         }
-        var a = this;
+        var n = this;
         !1 === s.globalData.hasLogin ? wx.login({
             success: e
         }) : e();

@@ -9,7 +9,7 @@ Page({
                 console.log(t), e.setData({
                     hasNetworkType: !0,
                     networkType: t.subtype || t.networkType
-                }), e.update();
+                });
             }
         });
     },

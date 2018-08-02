@@ -13,7 +13,7 @@ Page({
             success: function(n) {
                 a.globalData.hasLogin = !0, t.setData({
                     hasLogin: !0
-                }), t.update();
+                });
             }
         });
     }

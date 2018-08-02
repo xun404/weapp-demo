@@ -1,6 +1,18 @@
 # weapp-demo
 ## 微信小程序官方组件展示(持续更新)
 
+### 2018.07.23 v24 基础库更新（2.2.1）
+1. `F` 修复 远程调试模式下，基础库调用 accessSync 引起的卡顿问题
+2. `F` 修复 组件 `<video>` iOS系统其中一个 `<video>` 组件全屏退出后其他 `<video>` 组件展示异常的问题
+3. `F` 修复 组件 `<button>` 某些场景下无法正常跳转 APP 的问题
+4. `F` 修复 API BackgroundAudioManager.paused Android系统下某些情况下不正确的问题 详情
+5. `F` 修复 API 小程序进入后台后音视频播放没有正常停止的问题
+6. `F` 修复 API 小游戏 wx.onError 回调函数执行两次的问题
+7. `F` 修复 插件 功能页回调事件被多次触发的问题
+8. `A` 新增 API 小游戏跳小程序 wx.navigateToMiniProgram 详情
+9. `F` 修复 API wx.scanCode 在安卓平台返回 scanType 错误问题 详情
+
+
 ### 2018.06.14 v23 基础库更新（2.1.0）
 1. `A` 新增 API `wx.loadFontFace` 支持动态加载字体 [详情](https://developers.weixin.qq.com/miniprogram/dev/api/media-fontFace.html)
 2. `A` 新增 API `wx.getLogManager` 可记录用户操作日志，供用户提交意见反馈内容时，提交给开发者协助定位问题 [详情](https://developers.weixin.qq.com/miniprogram/dev/api/getLogManager.html)

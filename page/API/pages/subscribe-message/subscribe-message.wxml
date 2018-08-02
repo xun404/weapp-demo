@@ -12,6 +12,9 @@
                 <button bindsubscribe="onsubscribe" openType="subscribe" type="primary">授权接收订阅消息</button>
                 <button bindtap="openSetting" type="default">查看授权情况</button>
             </view>
+            <view class="btn-area">
+                <button bindtap="dosendmsg" loading="{{loading}}" type="primary">发送订阅消息</button>
+            </view>
         </view>
     </view>
     <template is="foot" data></template>

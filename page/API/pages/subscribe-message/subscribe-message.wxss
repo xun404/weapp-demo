@@ -1,6 +1,10 @@
 @import "../get-system-info/get-system-info.wxss";
 
+.page-body-wording {
+    padding: 130rpx 100rpx;
+}
+
 .page-body-title {
-    font-size: 60rpx;
+    font-size: 40rpx;
     line-height: 1;
 }

@@ -6,6 +6,7 @@ var t = "14592619.qcloud.la", e = {
     tunnelUrl: "https://" + t + "/tunnel",
     paymentUrl: "https://" + t + "/payment",
     templateMessageUrl: "https://" + t + "/templateMessage",
+    subscribeMessageUrl: "https://" + t + "/subscribeMessage",
     uploadFileUrl: "https://" + t + "/upload",
     downloadExampleUrl: "https://" + t + "/static/weapp.jpg"
 };

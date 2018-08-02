@@ -8,7 +8,7 @@ Page({
             success: function(s) {
                 t.setData({
                     systemInfo: s
-                }), t.update();
+                });
             }
         });
     }
