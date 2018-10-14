@@ -1,0 +1,8 @@
+@import "../../../component/pages/switch/switch.wxss";
+
+.page-body-info {
+    padding: 10rpx;
+    height: 200rpx;
+    overflow: scroll-y;
+    text-align: left;
+}

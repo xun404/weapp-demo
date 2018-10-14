@@ -1,0 +1,5 @@
+@import "../../../component/pages/switch/switch.wxss";
+
+input {
+    width: 100%;
+}

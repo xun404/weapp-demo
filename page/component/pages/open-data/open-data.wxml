@@ -1,0 +1,59 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'open-data'}}"></template>
+    <view class="page-body">
+        <view class="avatar">
+            <open-data class="avatar-img" lang="zh_CN" type="userAvatarUrl"></open-data>
+        </view>
+        <form>
+            <view class="page-section">
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">昵称</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="weui-input">
+                                <open-data lang="zh_CN" type="userNickName"></open-data>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">性别</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="weui-input">
+                                <open-data lang="zh_CN" type="userGender"></open-data>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">地区</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="weui-input">
+                                <open-data class="country" lang="zh_CN" type="userCountry"></open-data>
+                                <open-data class="province" lang="zh_CN" type="userProvince"></open-data>
+                                <open-data class="city" lang="zh_CN" type="userCity"></open-data>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">语言</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="weui-input">
+                                <open-data lang="zh_CN" type="userLanguage"></open-data>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </form>
+    </view>
+    <template is="foot" data></template>
+</view>

@@ -1,0 +1,24 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'rich-text'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-section-title">通过HTML String渲染</view>
+            <view class="page-content">
+                <scroll-view>{{htmlSnip}}</scroll-view>
+                <button bindtap="renderHtml" type="primary">渲染HTML</button>
+                <rich-text nodes="{{htmlSnip}}" wx:if="{{renderedByHtml}}"></rich-text>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">通过节点渲染</view>
+            <view class="page-content">
+                <scroll-view>{{nodeSnip}}</scroll-view>
+                <button bindtap="renderNode" type="primary">渲染Node</button>
+                <rich-text nodes="{{nodes}}" wx:if="{{renderedByNode}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

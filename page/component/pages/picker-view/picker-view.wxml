@@ -1,0 +1,28 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'picker-view'}}"></template>
+    <view class="page-body">
+        <view class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime?'白天':'夜晚'}}</view>
+        <picker-view bindchange="bindChange" indicatorStyle="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}">
+            <picker-view-column>
+                <view style="line-height: 50px; text-align: center;" wx:for="{{years}}" wx:key="{{years}}">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view style="line-height: 50px; text-align: center;" wx:for="{{months}}" wx:key="{{months}}">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view style="line-height: 50px; text-align: center;" wx:for="{{days}}" wx:key="{{days}}">{{item}}日</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="icon-container">
+                    <image class="picker-icon" src="../../resources/kind/daytime.png"></image>
+                </view>
+                <view class="icon-container">
+                    <image class="picker-icon" src="../../resources/kind/night.png"></image>
+                </view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+    <template is="foot" data></template>
+</view>

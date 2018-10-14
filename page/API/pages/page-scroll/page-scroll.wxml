@@ -1,0 +1,17 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'pageScrollTo'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="btn-area">
+                <button bindtap="scrollToBottom" type="primary">滚动到页面底部</button>
+            </view>
+            <view class="filling-area"></view>
+            <view class="btn-area">
+                <button bindtap="scrollToTop" type="primary">返回顶部</button>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

@@ -1,0 +1,38 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'addPhoneContact'}}"></template>
+    <view class="page-body">
+        <form bindsubmit="submit">
+            <view class="page-section">
+                <view class="weui-cells__title">姓氏</view>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <input class="weui-input" name="lastName"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="page-section">
+                <view class="weui-cells__title">名字</view>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <input class="weui-input" name="firstName"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="page-section">
+                <view class="weui-cells__title">手机号</view>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <input class="weui-input" name="mobilePhoneNumber"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button formType="submit" type="primary">创建联系人</button>
+                <button formType="reset" type="defualt">重置</button>
+            </view>
+        </form>
+    </view>
+    <template is="foot" data></template>
+</view>

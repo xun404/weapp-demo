@@ -1,0 +1,18 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'loadFontFace'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-body-info display-area {{loaded?'font-loaded':''}}">
+                <text wx:if="{{!loaded}}">Load {{fontFamily}}</text>
+                <text wx:else>{{fontFamily}} is loaded</text>
+            </view>
+            <view class="btn-area">
+                <button bindtap="loadFontFace" type="primary">加载字体</button>
+                <button bindtap="clear" type="default">清除</button>
+            </view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>

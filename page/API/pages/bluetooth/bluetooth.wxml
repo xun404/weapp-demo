@@ -1,0 +1,47 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'bluetooth'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-body-info">
+                <view class="devices_summary">已发现 {{devices.length}} 个外围设备：</view>
+                <scroll-view scrollWithAnimation scrollY class="device_list">
+                    <view bindtap="createBLEConnection" class="device_item" data-device-id="{{item.deviceId}}" data-name="{{item.name||item.localName}}" hoverClass="device_item_hover" wx:for="{{devices}}" wx:key="index">
+                        <view style="font-size: 16px; color: #333;">{{item.name}}</view>
+                        <view style="font-size: 10px">信号强度: {{item.RSSI}}dBm ({{utils.max(0,item.RSSI+100)}}%)</view>
+                        <view style="font-size: 10px">UUID: {{item.deviceId}}</view>
+                        <view style="font-size: 10px">Service数量: {{utils.len(item.advertisServiceUUIDs)}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="btn-area">
+                <button bindtap="openBluetoothAdapter" type="primary">开始扫描</button>
+                <button bindtap="stopBluetoothDevicesDiscovery">停止扫描</button>
+            </view>
+        </view>
+    </view>
+    <view class="connected_info" wx:if="{{connected}}">
+        <view>
+            <text>已连接到 {{name}}</text>
+            <view class="operation">
+                <button bindtap="writeBLECharacteristicValue" size="mini" wx:if="{{canWrite}}">写数据</button>
+                <button bindtap="closeBLEConnection" size="mini">断开连接</button>
+            </view>
+        </view>
+        <view style="font-size: 12px; margin-top: 10px;" wx:for="{{chs}}" wx:key="index">
+            <view>特性UUID: {{item.uuid}}</view>
+            <view>特性值: {{item.value}}</view>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>
+<wxs module="utils">
+module.exports.max = (function(n1, n2) {
+    return (Math.max(n1, n2))
+});
+module.exports.len = (function(arr) {
+    arr = arr || [];
+    return (arr.length)
+});
+</wxs>

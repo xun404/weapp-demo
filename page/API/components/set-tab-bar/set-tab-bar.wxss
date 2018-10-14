@@ -1,0 +1,7 @@
+@import "../../../component/pages/switch/switch.wxss";
+
+@import "../../../../app.wxss";
+
+.weui-label {
+    width: 5em;
+}

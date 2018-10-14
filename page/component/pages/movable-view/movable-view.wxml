@@ -1,0 +1,56 @@
+<import src="../../../common/head.wxml"></import>
+<import src="../../../common/foot.wxml"></import>
+<view class="container">
+    <template is="head" data="{{title:'movable-view'}}"></template>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="page-section-title first">movable-view区域小于movable-area</view>
+            <movable-area>
+                <movable-view direction="all" x="{{x}}" y="{{y}}">text</movable-view>
+            </movable-area>
+        </view>
+        <view class="btn-area">
+            <button bindtap="tap" class="page-body-button" type="primary">点击移动到 (30px, 30px)</button>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">movable-view区域大于movable-area</view>
+            <movable-area>
+                <movable-view class="max" direction="all">text</movable-view>
+            </movable-area>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">只可以横向移动</view>
+            <movable-area>
+                <movable-view direction="horizontal">text</movable-view>
+            </movable-area>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">只可以纵向移动</view>
+            <movable-area>
+                <movable-view direction="vertical">text</movable-view>
+            </movable-area>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">可超出边界</view>
+            <movable-area>
+                <movable-view outOfBounds direction="all">text</movable-view>
+            </movable-area>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">带有惯性</view>
+            <movable-area>
+                <movable-view inertia direction="all">text</movable-view>
+            </movable-area>
+        </view>
+        <view class="page-section">
+            <view class="page-section-title">可放缩</view>
+            <movable-area>
+                <movable-view scale bindchange="onChange" bindscale="onScale" direction="all" scaleMax="4" scaleMin="0.5" scaleValue="{{scale}}">text</movable-view>
+            </movable-area>
+        </view>
+        <view class="btn-area">
+            <button bindtap="tap2" class="page-body-button" type="primary">点击放大3倍</button>
+        </view>
+    </view>
+    <template is="foot" data></template>
+</view>
