@@ -18,6 +18,10 @@ form {
     width: 100%;
 }
 
+input {
+    width: 100%;
+}
+
 .strong {
     font-weight: bold;
 }

@@ -1,1 +1,1 @@
-@import "../get-system-info/get-system-info.wxss";
+@import "../../../component/pages/switch/switch.wxss";

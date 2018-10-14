@@ -1,6 +1,12 @@
 var o = [ "demo1", "demo2", "demo3" ];
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "scroll-view",
+            path: "page/component/pages/scroll-view/scroll-view"
+        };
+    },
     data: {
         toView: "green"
     },
@@ -13,21 +19,21 @@ Page({
     scroll: function(o) {
         console.log(o);
     },
-    scrollToTop: function(o) {
+    scrollToTop: function() {
         this.setAction({
             scrollTop: 0
         });
     },
-    tap: function(t) {
-        for (var e = 0; e < o.length; ++e) if (o[e] === this.data.toView) {
+    tap: function() {
+        for (var t = 0; t < o.length; ++t) if (o[t] === this.data.toView) {
             this.setData({
-                toView: o[e + 1],
-                scrollTop: 200 * (e + 1)
+                toView: o[t + 1],
+                scrollTop: 200 * (t + 1)
             });
             break;
         }
     },
-    tapMove: function(o) {
+    tapMove: function() {
         this.setData({
             scrollTop: this.data.scrollTop + 10
         });

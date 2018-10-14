@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "数据存储",
+            path: "page/API/pages/storage/storage"
+        };
+    },
     data: {
         key: "",
         data: "",
@@ -15,14 +21,14 @@ Page({
         this.data.data = t.detail.value;
     },
     getStorage: function() {
-        var t, a = this.data.key, e = this.data.data;
+        var t = this.data, a = t.key, e = t.data, i = void 0;
         0 === a.length ? this.setData({
             key: a,
             data: e,
             "dialog.hidden": !1,
             "dialog.title": "读取数据失败",
             "dialog.content": "key 不能为空"
-        }) : "" === (t = wx.getStorageSync(a)) ? this.setData({
+        }) : "" === (i = wx.getStorageSync(a)) ? this.setData({
             key: a,
             data: e,
             "dialog.hidden": !1,
@@ -33,20 +39,20 @@ Page({
             data: e,
             "dialog.hidden": !1,
             "dialog.title": "读取数据成功",
-            "dialog.content": "data: '" + t + "'"
+            "dialog.content": "data: '" + i + "'"
         });
     },
     setStorage: function() {
-        var t = this.data.key, a = this.data.data;
-        0 === t.length ? this.setData({
-            key: t,
-            data: a,
+        var t = this.data, a = t.key, e = t.data;
+        0 === a.length ? this.setData({
+            key: a,
+            data: e,
             "dialog.hidden": !1,
             "dialog.title": "保存数据失败",
             "dialog.content": "key 不能为空"
-        }) : (wx.setStorageSync(t, a), this.setData({
-            key: t,
-            data: a,
+        }) : (wx.setStorageSync(a, e), this.setData({
+            key: a,
+            data: e,
             "dialog.hidden": !1,
             "dialog.title": "存储数据成功"
         }));

@@ -1,6 +1,12 @@
 var e = require("../../../../config").uploadFileUrl;
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "上传文件",
+            path: "page/API/pages/upload-file/upload-file"
+        };
+    },
     chooseImage: function() {
         var s = this;
         wx.chooseImage({

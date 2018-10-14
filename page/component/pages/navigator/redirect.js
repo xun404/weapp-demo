@@ -1,7 +1,13 @@
 Page({
-    onLoad: function(t) {
-        console.log(t), this.setData({
-            title: t.title
+    onShareAppMessage: function() {
+        return {
+            title: "redirectPage",
+            path: "page/component/pages/navigator/redirect"
+        };
+    },
+    onLoad: function(e) {
+        console.log(e), this.setData({
+            title: e.title
         });
     }
 });

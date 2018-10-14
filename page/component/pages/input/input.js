@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "input",
+            path: "page/component/pages/input/input"
+        };
+    },
     data: {
         focus: !1,
         inputValue: ""
@@ -9,11 +15,11 @@ Page({
         });
     },
     bindReplaceInput: function(e) {
-        var a = e.detail.value, t = e.detail.cursor;
-        return -1 !== t && (t = e.detail.value.slice(0, t).replace(/11/g, "2").length), 
+        var t = e.detail.value, a = e.detail.cursor;
+        return -1 !== a && (a = e.detail.value.slice(0, a).replace(/11/g, "2").length), 
         {
-            value: a.replace(/11/g, "2"),
-            cursor: t
+            value: t.replace(/11/g, "2"),
+            cursor: a
         };
     },
     bindHideKeyboard: function(e) {

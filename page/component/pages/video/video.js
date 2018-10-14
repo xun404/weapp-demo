@@ -1,13 +1,19 @@
 function t() {
-    for (var t = [], o = 0; o < 3; ++o) {
-        var e = Math.floor(256 * Math.random()).toString(16);
-        e = 1 == e.length ? "0" + e : e, t.push(e);
+    for (var t = [], e = 0; e < 3; ++e) {
+        var o = Math.floor(256 * Math.random()).toString(16);
+        o = 1 === o.length ? "0" + o : o, t.push(o);
     }
     return "#" + t.join("");
 }
 
 Page({
-    onReady: function(t) {
+    onShareAppMessage: function() {
+        return {
+            title: "video",
+            path: "page/component/pages/video/video"
+        };
+    },
+    onReady: function() {
         this.videoContext = wx.createVideoContext("myVideo");
     },
     inputValue: "",
@@ -32,9 +38,9 @@ Page({
             sourceType: [ "album", "camera" ],
             maxDuration: 60,
             camera: [ "front", "back" ],
-            success: function(o) {
+            success: function(e) {
                 t.setData({
-                    src: o.tempFilePath
+                    src: e.tempFilePath
                 });
             }
         });

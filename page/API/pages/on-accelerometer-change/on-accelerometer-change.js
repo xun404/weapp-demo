@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "监听重力感应数据",
+            path: "page/API/pages/on-accelerometer-change/on-accelerometer-change"
+        };
+    },
     data: {
         x: 0,
         y: 0,
@@ -35,7 +41,7 @@ Page({
     },
     drawSmallBall: function() {
         var a = this.position, t = "rgba(1,1,1,0)";
-        a.x = a.x + a.vx, a.y = a.y + a.vy, a.vx = a.vx + a.ax, a.vy = a.vy + a.ay, Math.sqrt(Math.pow(Math.abs(a.x) - 151, 2) + Math.pow(Math.abs(a.y) - 151, 2)) >= 115 && (a.x > 151 && a.vx > 0 && (a.vx = 0), 
+        a.x += a.vx, a.y += a.vy, a.vx += a.ax, a.vy += a.ay, Math.sqrt(Math.pow(Math.abs(a.x) - 151, 2) + Math.pow(Math.abs(a.y) - 151, 2)) >= 115 && (a.x > 151 && a.vx > 0 && (a.vx = 0), 
         a.x < 151 && a.vx < 0 && (a.vx = 0), a.y > 151 && a.vy > 0 && (a.vy = 0), a.y < 151 && a.vy < 0 && (a.vy = 0), 
         t = "#ff0000");
         var e = wx.createContext();

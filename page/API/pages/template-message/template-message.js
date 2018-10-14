@@ -1,4 +1,4 @@
-var e = require("../../../../config").templateMessageUrl, s = getApp(), o = {
+var e = require("../../../../config").templateMessageUrl, s = getApp(), t = {
     address: "T.I.T 造舰厂",
     time: "2017.01.09",
     name: "帝国歼星舰",
@@ -6,29 +6,35 @@ var e = require("../../../../config").templateMessageUrl, s = getApp(), o = {
 };
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "模板消息",
+            path: "page/API/pages/template-message/template-message"
+        };
+    },
     onLoad: function() {
         this.setData({
-            formData: o
+            formData: t
         });
     },
-    submitForm: function(o) {
-        var t = this, a = o.detail.formId, i = o.detail.value;
-        console.log("form_id is:", a), t.setData({
+    submitForm: function(t) {
+        var a = this, o = t.detail.formId, i = t.detail.value;
+        console.log("form_id is:", o), a.setData({
             loading: !0
-        }), s.getUserOpenId(function(s, o) {
+        }), s.getUserOpenId(function(s, t) {
             s ? console.log("err:", s) : wx.request({
                 url: e,
                 method: "POST",
                 data: {
-                    form_id: a,
-                    openid: o,
+                    formId: o,
+                    openid: t,
                     formData: i
                 },
                 success: function(e) {
                     console.log("submit form success", e), wx.showToast({
                         title: "发送成功",
                         icon: "success"
-                    }), t.setData({
+                    }), a.setData({
                         loading: !1
                     });
                 },

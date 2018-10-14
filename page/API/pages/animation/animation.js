@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "动画",
+            path: "page/API/pages/animation/animation"
+        };
+    },
     onReady: function() {
         this.animation = wx.createAnimation();
     },

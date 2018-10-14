@@ -1,6 +1,12 @@
 var e = require("../../../../config").requestUrl;
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "网络请求",
+            path: "page/API/pages/request/request"
+        };
+    },
     makeRequest: function() {
         var s = this;
         s.setData({

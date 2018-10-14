@@ -1,4 +1,4 @@
-@import "../get-system-info/get-system-info.wxss";
+@import "../../../component/pages/switch/switch.wxss";
 
 .page-body-wording {
     padding: 130rpx 100rpx;

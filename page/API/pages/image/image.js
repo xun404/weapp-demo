@@ -1,6 +1,12 @@
 var e = [ [ "camera" ], [ "album" ], [ "camera", "album" ] ], a = [ [ "compressed" ], [ "original" ], [ "compressed", "original" ] ];
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "图片",
+            path: "page/API/pages/image/image"
+        };
+    },
     data: {
         imageList: [],
         sourceTypeIndex: 2,

@@ -1,4 +1,4 @@
-for (var a = [ "default", "primary", "warn" ], t = {
+for (var t = [ "default", "primary", "warn" ], a = {
     data: {
         defaultSize: "default",
         primarySize: "default",
@@ -7,26 +7,32 @@ for (var a = [ "default", "primary", "warn" ], t = {
         plain: !1,
         loading: !1
     },
-    setDisabled: function(a) {
+    onShareAppMessage: function() {
+        return {
+            title: "button",
+            path: "page/component/pages/button/button"
+        };
+    },
+    setDisabled: function() {
         this.setData({
             disabled: !this.data.disabled
         });
     },
-    setPlain: function(a) {
+    setPlain: function() {
         this.setData({
             plain: !this.data.plain
         });
     },
-    setLoading: function(a) {
+    setLoading: function() {
         this.setData({
             loading: !this.data.loading
         });
     }
-}, i = 0; i < a.length; ++i) !function(a) {
-    t[a] = function(t) {
-        var i = a + "Size", e = {};
-        e[i] = "default" === this.data[i] ? "mini" : "default", this.setData(e);
+}, i = 0; i < t.length; ++i) !function(t) {
+    a[t] = function() {
+        var a = t + "Size", i = {};
+        i[a] = "default" === this.data[a] ? "mini" : "default", this.setData(i);
     };
-}(a[i]);
+}(t[i]);
 
-Page(t);
+Page(a);

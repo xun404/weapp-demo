@@ -1,6 +1,12 @@
 var t = require("../../../../util/util.js").formatLocation;
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "获取位置",
+            path: "page/API/pages/get-location/get-location"
+        };
+    },
     data: {
         hasLocation: !1
     },

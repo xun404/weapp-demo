@@ -1,7 +1,13 @@
-var t = wx.getSystemInfoSync();
+var a = wx.getSystemInfoSync();
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "ad",
+            path: "page/component/pages/ad/ad"
+        };
+    },
     data: {
-        platform: t.platform
+        platform: a.platform
     }
 });

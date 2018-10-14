@@ -55,7 +55,7 @@
                 </view>
                 <view class="weui-cell weui-cell_input">
                     <view class="weui-cell__hd">
-                        <view class="weui-label">DPI</view>
+                        <view class="weui-label">DPR</view>
                     </view>
                     <view class="weui-cell__bd">
                         <input class="weui-input" disabled="{{true}}" placeholder="未获取" type="text" value="{{systemInfo.pixelRatio}}"></input>

@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "picker",
+            path: "page/component/pages/picker/picker"
+        };
+    },
     data: {
         array: [ "中国", "美国", "巴西", "日本" ],
         index: 0,

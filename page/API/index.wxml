@@ -1,4 +1,5 @@
-<view class="index">
+<set-tab-bar bindunmount="leaveSetTabBarPage" wx:if="{{isSetTabBarPage}}"></set-tab-bar>
+<view class="index" wx:else>
     <view class="index-hd">
         <image class="index-logo" src="resources/kind/logo.png"></image>
         <view class="index-desc">以下将演示小程序接口能力，具体属性参数详见小程序开发文档。</view>
@@ -12,10 +13,16 @@
                 </view>
                 <view class="kind-list-item-bd {{item.open?'kind-list-item-bd-show':''}}">
                     <view class="navigator-box {{item.open?'navigator-box-show':''}}">
-                        <navigator class="navigator" url="pages/{{page.url}}" wx:for="{{item.pages}}" wx:for-item="page" wx:key="*item">
-                            <view class="navigator-text">{{page.zh}}</view>
-                            <view class="navigator-arrow"></view>
-                        </navigator>
+                        <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                            <navigator class="navigator" url="pages/{{page.url}}" wx:if="{{page.url!=='@set-tab-bar'}}">
+                                <view class="navigator-text">{{page.zh}}</view>
+                                <view class="navigator-arrow"></view>
+                            </navigator>
+                            <view bindtap="enterSetTabBarPage" class="navigator" wx:else>
+                                <view class="navigator-text">{{page.zh}}</view>
+                                <view class="navigator-arrow"></view>
+                            </view>
+                        </block>
                     </view>
                 </view>
             </view>

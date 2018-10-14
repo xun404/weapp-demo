@@ -1,6 +1,12 @@
-var e, a, t = require("../../../../util/util.js");
+var e = require("../../../../util/util.js"), a = void 0, t = void 0;
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "录音",
+            path: "page/API/pages/voice/voice"
+        };
+    },
     data: {
         recording: !1,
         playing: !1,
@@ -17,25 +23,25 @@ Page({
         this.setData({
             recording: !0
         });
-        var e = this;
-        a = setInterval(function() {
-            var a = e.data.recordTime += 1;
-            e.setData({
-                formatedRecordTime: t.formatTime(e.data.recordTime),
-                recordTime: a
+        var a = this;
+        t = setInterval(function() {
+            var t = a.data.recordTime += 1;
+            a.setData({
+                formatedRecordTime: e.formatTime(a.data.recordTime),
+                recordTime: t
             });
         }, 1e3), wx.startRecord({
-            success: function(a) {
-                e.setData({
+            success: function(t) {
+                a.setData({
                     hasRecord: !0,
-                    tempFilePath: a.tempFilePath,
-                    formatedPlayTime: t.formatTime(e.data.playTime)
+                    tempFilePath: t.tempFilePath,
+                    formatedPlayTime: e.formatTime(a.data.playTime)
                 });
             },
             complete: function() {
-                e.setData({
+                a.setData({
                     recording: !1
-                }), clearInterval(a);
+                }), clearInterval(t);
             }
         });
     },
@@ -43,57 +49,57 @@ Page({
         wx.stopRecord();
     },
     stopRecordUnexpectedly: function() {
-        var e = this;
+        var a = this;
         wx.stopRecord({
             success: function() {
-                console.log("stop record success"), clearInterval(a), e.setData({
+                console.log("stop record success"), clearInterval(t), a.setData({
                     recording: !1,
                     hasRecord: !1,
                     recordTime: 0,
-                    formatedRecordTime: t.formatTime(0)
+                    formatedRecordTime: e.formatTime(0)
                 });
             }
         });
     },
     playVoice: function() {
-        var a = this;
-        e = setInterval(function() {
-            var e = a.data.playTime + 1;
-            console.log("update playTime", e), a.setData({
+        var t = this;
+        a = setInterval(function() {
+            var a = t.data.playTime + 1;
+            console.log("update playTime", a), t.setData({
                 playing: !0,
-                formatedPlayTime: t.formatTime(e),
-                playTime: e
+                formatedPlayTime: e.formatTime(a),
+                playTime: a
             });
         }, 1e3), wx.playVoice({
             filePath: this.data.tempFilePath,
             success: function() {
-                clearInterval(e);
-                console.log("play voice finished"), a.setData({
+                clearInterval(a);
+                console.log("play voice finished"), t.setData({
                     playing: !1,
-                    formatedPlayTime: t.formatTime(0),
+                    formatedPlayTime: e.formatTime(0),
                     playTime: 0
                 });
             }
         });
     },
     pauseVoice: function() {
-        clearInterval(e), wx.pauseVoice(), this.setData({
+        clearInterval(a), wx.pauseVoice(), this.setData({
             playing: !1
         });
     },
     stopVoice: function() {
-        clearInterval(e), this.setData({
+        clearInterval(a), this.setData({
             playing: !1,
-            formatedPlayTime: t.formatTime(0),
+            formatedPlayTime: e.formatTime(0),
             playTime: 0
         }), wx.stopVoice();
     },
     clear: function() {
-        clearInterval(e), wx.stopVoice(), this.setData({
+        clearInterval(a), wx.stopVoice(), this.setData({
             playing: !1,
             hasRecord: !1,
             tempFilePath: "",
-            formatedRecordTime: t.formatTime(0),
+            formatedRecordTime: e.formatTime(0),
             recordTime: 0,
             playTime: 0
         });

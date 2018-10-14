@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "下拉刷新",
+            path: "page/API/pages/pull-down-refresh/pull-down-refresh"
+        };
+    },
     onPullDownRefresh: function() {
         wx.showToast({
             title: "loading...",
@@ -7,8 +13,8 @@ Page({
     },
     stopPullDownRefresh: function() {
         wx.stopPullDownRefresh({
-            complete: function(o) {
-                wx.hideToast(), console.log(o, new Date());
+            complete: function(e) {
+                wx.hideToast(), console.log(e, new Date());
             }
         });
     }

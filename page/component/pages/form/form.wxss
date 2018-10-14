@@ -1,4 +1,4 @@
-@import "../../../API/pages/get-system-info/get-system-info.wxss";
+@import "../switch/switch.wxss";
 
 label {
     display: inline-block;

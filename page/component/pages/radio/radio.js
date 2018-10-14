@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "radio",
+            path: "page/component/pages/radio/radio"
+        };
+    },
     data: {
         items: [ {
             value: "USA",
@@ -23,7 +29,7 @@ Page({
     },
     radioChange: function(e) {
         console.log("radio发生change事件，携带value值为：", e.detail.value);
-        for (var a = this.data.items, t = 0, l = a.length; t < l; ++t) a[t].checked = a[t].value == e.detail.value;
+        for (var a = this.data.items, t = 0, n = a.length; t < n; ++t) a[t].checked = a[t].value === e.detail.value;
         this.setData({
             items: a
         });

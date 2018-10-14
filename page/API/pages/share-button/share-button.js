@@ -1,7 +1,8 @@
 Page({
     onShareAppMessage: function() {
         return {
-            title: "转发按钮"
+            title: "转发按钮",
+            path: "page/API/pages/share-button/share-button"
         };
     },
     handleTapShareButton: function() {

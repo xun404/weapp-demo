@@ -24,11 +24,11 @@
             <ad unitId="adunit-demo7"></ad>
         </view>
         <view class="page-section page-section-gap">
-            <view class="page-section-title">公众号推广</view>
+            <view class="page-section-title">公众号推广</view>
             <ad unitId="adunit-demo3"></ad>
         </view>
         <view class="page-section page-section-gap">
-            <view class="page-section-title">活动推广</view>
+            <view class="page-section-title">活动推广</view>
             <ad unitId="adunit-demo5"></ad>
         </view>
         <view class="page-section page-section-gap">

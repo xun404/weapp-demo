@@ -1,6 +1,12 @@
 var s = require("../../../../config").subscribeMessageUrl, e = getApp();
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "订阅消息",
+            path: "page/API/pages/subscribe-message/subscribe-message"
+        };
+    },
     data: {
         hasAuth: !1,
         authType: 0

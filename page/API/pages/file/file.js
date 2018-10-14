@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "文件",
+            path: "page/API/pages/file/file"
+        };
+    },
     onLoad: function() {
         this.setData({
             savedFilePath: wx.getStorageSync("savedFilePath")
@@ -38,7 +44,7 @@ Page({
                         }
                     });
                 },
-                fail: function(e) {
+                fail: function() {
                     t.setData({
                         dialog: {
                             title: "保存失败",

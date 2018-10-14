@@ -1,22 +1,28 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "监听罗盘数据",
+            path: "page/API/pages/on-compass-change/on-compass-change"
+        };
+    },
     data: {
         enabled: !0,
         direction: 0
     },
     onReady: function() {
-        var t = this;
-        wx.onCompassChange(function(a) {
-            t.setData({
-                direction: parseInt(a.direction)
+        var a = this;
+        wx.onCompassChange(function(s) {
+            a.setData({
+                direction: parseInt(s.direction, 10)
             });
         });
     },
     startCompass: function() {
         if (!this.data.enabled) {
-            var t = this;
+            var a = this;
             wx.startCompass({
                 success: function() {
-                    t.setData({
+                    a.setData({
                         enabled: !0
                     });
                 }
@@ -25,10 +31,10 @@ Page({
     },
     stopCompass: function() {
         if (this.data.enabled) {
-            var t = this;
+            var a = this;
             wx.stopCompass({
                 success: function() {
-                    t.setData({
+                    a.setData({
                         enabled: !1
                     });
                 }

@@ -14,10 +14,13 @@ function e(t) {
     });
 }
 
-require("../../../../vendor/qcloud-weapp-client-sdk/index"), require("../../../../config").loginUrl, 
-require("../../../../config").tunnelUrl;
-
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "Web Socket",
+            path: "page/API/pages/web-socket/web-socket"
+        };
+    },
     data: {
         socketStatus: "closed"
     },
@@ -31,7 +34,7 @@ Page({
     },
     toggleSocket: function(t) {
         var e = t.detail.value;
-        if (e && "closed" == this.data.socketStatus) this.openSocket(); else if (!e && "connected" == this.data.socketStatus) {
+        if (e && "closed" === this.data.socketStatus) this.openSocket(); else if (!e && "connected" === this.data.socketStatus) {
             this.closeSocket(!0);
         }
     },
@@ -58,11 +61,11 @@ Page({
             url: "wss://echo.websocket.org"
         });
     },
-    closeSocket: function(t) {
-        var o = this;
+    closeSocket: function() {
+        var t = this;
         "connected" === this.data.socketStatus && wx.closeSocket({
             success: function() {
-                e("Socket已断开"), o.setData({
+                e("Socket已断开"), t.setData({
                     socketStatus: "closed"
                 });
             }

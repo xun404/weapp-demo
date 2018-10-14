@@ -1,6 +1,12 @@
 var e = require("../../../../config").downloadExampleUrl;
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "下载文件",
+            path: "page/API/pages/download-file/download-file"
+        };
+    },
     downloadImage: function() {
         var o = this;
         wx.downloadFile({

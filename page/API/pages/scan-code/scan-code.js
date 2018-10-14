@@ -1,16 +1,22 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "扫码",
+            path: "page/API/pages/scan-code/scan-code"
+        };
+    },
     data: {
         result: ""
     },
     scanCode: function() {
-        var s = this;
+        var e = this;
         wx.scanCode({
-            success: function(t) {
-                s.setData({
-                    result: t.result
+            success: function(s) {
+                e.setData({
+                    result: s.result
                 });
             },
-            fail: function(s) {}
+            fail: function() {}
         });
     }
 });

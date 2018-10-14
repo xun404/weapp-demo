@@ -1,20 +1,26 @@
-var t = require("./example.js");
+var a = require("./example.js");
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "创建画布",
+            path: "page/API/pages/canvas/canvas"
+        };
+    },
     onLoad: function() {
         this.context = wx.createContext();
-        var a = Object.keys(t);
+        var t = Object.keys(a);
         this.setData({
-            methods: a
+            methods: t
         });
         var n = this;
-        a.forEach(function(a) {
-            n[a] = function() {
-                t[a](n.context);
-                var c = n.context.getActions();
+        t.forEach(function(t) {
+            n[t] = function() {
+                a[t](n.context);
+                var e = n.context.getActions();
                 wx.drawCanvas({
                     canvasId: "canvas",
-                    actions: c
+                    actions: e
                 });
             };
         });
@@ -22,11 +28,11 @@ Page({
     toTempFilePath: function() {
         wx.canvasToTempFilePath({
             canvasId: "canvas",
-            success: function(t) {
-                console.log(t);
+            success: function(a) {
+                console.log(a);
             },
-            fail: function(t) {
-                console.log(t);
+            fail: function(a) {
+                console.log(a);
             }
         });
     }

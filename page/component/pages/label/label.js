@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "label",
+            path: "page/component/pages/label/label"
+        };
+    },
     data: {
         checkboxItems: [ {
             name: "USA",
@@ -26,7 +32,7 @@ Page({
         for (var a = e.detail.value, t = {}, c = 0; c < this.data.radioItems.length; c++) -1 !== a.indexOf(this.data.radioItems[c].name) ? t["radioItems[" + c + "].checked"] = !0 : t["radioItems[" + c + "].checked"] = !1;
         this.setData(t);
     },
-    tapEvent: function(e) {
+    tapEvent: function() {
         console.log("按钮被点击");
     }
 });

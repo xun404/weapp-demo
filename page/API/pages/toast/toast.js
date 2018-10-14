@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "消息提示框",
+            path: "page/API/pages/toast/toast"
+        };
+    },
     toast1Tap: function() {
         wx.showToast({
             title: "默认"

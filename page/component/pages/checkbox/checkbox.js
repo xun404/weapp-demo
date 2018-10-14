@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "checkbox",
+            path: "page/component/pages/checkbox/checkbox"
+        };
+    },
     data: {
         items: [ {
             value: "USA",
@@ -23,10 +29,10 @@ Page({
     },
     checkboxChange: function(e) {
         console.log("checkbox发生change事件，携带value值为：", e.detail.value);
-        for (var a = this.data.items, t = e.detail.value, l = 0, c = a.length; l < c; ++l) {
-            a[l].checked = !1;
-            for (var n = 0, u = t.length; n < u; ++n) if (a[l].value == t[n]) {
-                a[l].checked = !0;
+        for (var a = this.data.items, t = e.detail.value, c = 0, n = a.length; c < n; ++c) {
+            a[c].checked = !1;
+            for (var l = 0, h = t.length; l < h; ++l) if (a[c].value === t[l]) {
+                a[c].checked = !0;
                 break;
             }
         }

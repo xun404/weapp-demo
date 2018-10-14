@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "小程序接口能力展示",
+            path: "page/API/index"
+        };
+    },
     data: {
         list: [ {
             id: "api",
@@ -28,6 +34,18 @@ Page({
             }, {
                 zh: "订阅消息",
                 url: "subscribe-message/subscribe-message"
+            }, {
+                zh: "收货地址",
+                url: "choose-address/choose-address"
+            }, {
+                zh: "获取发票抬头",
+                url: "choose-invoice-title/choose-invoice-title"
+            }, {
+                zh: "生物认证",
+                url: "soter-authentication/soter-authentication"
+            }, {
+                zh: "设置",
+                url: "setting/setting"
             } ]
         }, {
             id: "page",
@@ -39,6 +57,9 @@ Page({
             }, {
                 zh: "标题栏加载动画",
                 url: "navigation-bar-loading/navigation-bar-loading"
+            }, {
+                zh: "设置TabBar",
+                url: "@set-tab-bar"
             }, {
                 zh: "页面跳转",
                 url: "navigator/navigator"
@@ -58,8 +79,17 @@ Page({
                 zh: "显示模态弹窗",
                 url: "modal/modal"
             }, {
+                zh: "页面滚动",
+                url: "page-scroll/page-scroll"
+            }, {
                 zh: "显示消息提示框",
                 url: "toast/toast"
+            }, {
+                zh: "获取WXML节点信息",
+                url: "get-wxml-node-info/get-wxml-node-info"
+            }, {
+                zh: "WXML节点布局相交状态",
+                url: "intersection-observer/intersection-observer"
             } ]
         }, {
             id: "device",
@@ -86,6 +116,30 @@ Page({
             }, {
                 zh: "扫码",
                 url: "scan-code/scan-code"
+            }, {
+                zh: "剪切板",
+                url: "clipboard-data/clipboard-data"
+            }, {
+                zh: "蓝牙",
+                url: "bluetooth/bluetooth"
+            }, {
+                zh: "iBeacon",
+                url: "ibeacon/ibeacon"
+            }, {
+                zh: "屏幕亮度",
+                url: "screen-brightness/screen-brightness"
+            }, {
+                zh: "用户截屏事件",
+                url: "capture-screen/capture-screen"
+            }, {
+                zh: "振动",
+                url: "vibrate/vibrate"
+            }, {
+                zh: "手机联系人",
+                url: "add-contact/add-contact"
+            }, {
+                zh: "Wi-Fi",
+                url: "wifi/wifi"
             } ]
         }, {
             id: "network",
@@ -123,6 +177,9 @@ Page({
             }, {
                 zh: "视频",
                 url: "video/video"
+            }, {
+                zh: "动态加载字体",
+                url: "load-font-face/load-font-face"
             } ]
         }, {
             id: "location",
@@ -142,17 +199,38 @@ Page({
             id: "storage",
             name: "数据",
             url: "storage/storage"
-        } ]
+        }, {
+            id: "worker",
+            name: "多线程",
+            url: "worker/worker"
+        } ],
+        isSetTabBarPage: !1
+    },
+    onShow: function() {
+        this.leaveSetTabBarPage();
+    },
+    onHide: function() {
+        this.leaveSetTabBarPage();
     },
     kindToggle: function(e) {
-        for (var a = e.currentTarget.id, o = this.data.list, t = 0, n = o.length; t < n; ++t) if (o[t].id == a) {
-            if (o[t].url) return void wx.navigateTo({
-                url: "pages/" + o[t].url
+        for (var a = e.currentTarget.id, t = this.data.list, o = 0, r = t.length; o < r; ++o) if (t[o].id === a) {
+            if (t[o].url) return void wx.navigateTo({
+                url: "pages/" + t[o].url
             });
-            o[t].open = !o[t].open;
-        } else o[t].open = !1;
+            t[o].open = !t[o].open;
+        } else t[o].open = !1;
         this.setData({
-            list: o
+            list: t
+        });
+    },
+    enterSetTabBarPage: function() {
+        this.setData({
+            isSetTabBarPage: !0
+        });
+    },
+    leaveSetTabBarPage: function() {
+        this.setData({
+            isSetTabBarPage: !1
         });
     }
 });

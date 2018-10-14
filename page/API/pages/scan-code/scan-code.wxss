@@ -1,4 +1,4 @@
-@import "../get-system-info/get-system-info.wxss";
+@import "../../../component/pages/switch/switch.wxss";
 
 .weui-cell__bd {
     min-height: 48rpx;

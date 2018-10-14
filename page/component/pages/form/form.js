@@ -1,4 +1,10 @@
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "form",
+            path: "page/component/pages/form/form"
+        };
+    },
     data: {
         pickerHidden: !0,
         chosen: ""
@@ -10,12 +16,12 @@ Page({
             chosen: e.detail.value
         });
     },
-    pickerCancel: function(e) {
+    pickerCancel: function() {
         this.setData({
             pickerHidden: !0
         });
     },
-    pickerShow: function(e) {
+    pickerShow: function() {
         this.setData({
             pickerHidden: !1
         });

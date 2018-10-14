@@ -5,6 +5,12 @@ var a = [ [ "camera" ], [ "album" ], [ "camera", "album" ] ], e = [ [ "front" ],
 });
 
 Page({
+    onShareAppMessage: function() {
+        return {
+            title: "拍摄/选择视频",
+            path: "page/API/pages/video/video"
+        };
+    },
     data: {
         sourceTypeIndex: 2,
         sourceType: [ "拍摄", "相册", "拍摄或相册" ],
