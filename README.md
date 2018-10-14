@@ -1,6 +1,74 @@
 # weapp-demo
 ## 微信小程序官方组件展示(持续更新)
 
+### 2018.09.10 v29 基础库更新（2.3.0）
+
+```
+A 新增 框架 分包加载支持独立分包 详情
+A 新增 框架 支持基于配置的分包预下载 详情
+A 新增 框架 在 iPad 上运行的小程序可以旋转屏幕 详情
+A 新增 插件 支持 <live-player> 和 <live-pusher> 组件详情
+A 新增 API wx.onWindowResize wx.offWindowResize 在 iPad 下可监听/取消监听屏幕旋转事件 详情
+A 新增 API wx.chooseInvoice 选择发票 详情
+A 新增 API wx.setInnerAudioOption 设置 InnerAudio 的播放选项 详情
+A 新增 API 监听陀螺仪 详情
+A 新增 API 监听设备方向的角度的变化 详情
+U 更新 API wx.getRecorderManager 新增 onInterruptionBegin， onInterruptionEnd 监听录音被系统中断 详情
+U 更新 API wx.startBeaconDiscovery 增加 ignoreBluetoothAvailable 参数，在 iOS 下可跳过蓝牙开关校验 详情
+U 更新 API fileSystem.stat fileSystem.mkdir fileSystem.mkdirSync fileSystem.rmdir fileSystem.rmdirSync 增加 recursive 参数，支持递归 详情
+U 更新 API 云函数调用返回云函数执行 ID（requestID）详情
+U 更新 组件 <map> bindpoitap 用来监听 POI 点击事件回调 详情
+U 更新 组件 <map> markers 支持网络图片 详情
+U 更新 组件 <map> markers 支持通过 zIndex 控制层级 详情
+U 更新 组件 <map> callout 支持设置边框和透明背景 详情
+U 更新 组件 <map> 增加 show-compass 属性，控制是否显示指南针 详情
+U 更新 组件 <map> 增加 enable-3D 属性，控制是否展示3D楼块 详情
+U 更新 组件 <map> 增加 enable-overlooking 属性，控制是否支持俯视 详情
+U 更新 组件 <map> 增加 polygons 属性，可以在地图上画出多边形区域 详情
+U 更新 组件 <map> 增加 subkey 属性，可以自定义底图样式 详情
+U 更新 组件 <map> 增加 enable-zoom, enable-scroll, enable-rotate 属性，可以控制组件的缩放、滑动、旋转行为 详情
+U 更新 组件 <map> bindregionchange 回调增加 causedBy 参数区分事件来源 详情
+U 更新 组件 <live-pusher> 新增 device-position 属性初始设置前后摄像头 详情
+U 更新 组件 <live-pusher> 属性 waiting-image 支持网络路径、临时文件和包内路径 详情
+U 更新 组件 <web-view> 新增 bindload 和 binderror事件监听 详情
+F 修复 组件 <input> 在 iOS 下搜狗输入法触发 focus 问题 反馈详情
+F 修复 组件 <input> 安卓某些机型 input 事件 value 为空值问题 反馈详情
+F 修复 组件 <input> 在 iOS 下右滑返回后点击无法响应的问题
+F 修复 组件 <video> 在 iOS 下全屏后右滑返回上一页点击无响应问题 反馈详情
+F 修复 组件 <video 安卓下设置了 initial-time 不会自动播放的问题
+F 修复 组件 <video> 带空格的 src 在 iOS 下无法播放的问题 反馈详情
+F 修复 组件 <live-player> 安卓下移除后仍会继续播放问题 反馈详情
+F 修复 组件 <camera> 在 iOS 下边录制边播放背景音乐无声音问题 反馈详情
+F 修复 组件 <canvas> 安卓下用 transform 做旋转会错乱问题
+F 修复 组件 <canvas> iOS 绘图结果错误问题 反馈详情
+F 修复 组件 <textarea> 安卓下 <input> 输入内容后 <textarea> 无法输入问题 反馈详情
+F 修复 组件 <input> iOS 下输入时无法选字，导致输入失效问题 反馈详情
+F 修复 组件 <map> iOS 下 polyline 设置 arrowLine 属性无效问题
+F 修复 组件 <map> 安卓上 label 未设置 bgColor 时无法显示问题
+F 修复 组件 <web-view> 华为 MATE 9 下页面里的 tel:// 链接无法弹起电话本的问题
+F 修复 组件 <textarea> 安卓 adjust-positon 属性设置无效的问题 反馈详情
+F 修复 API wx.createCameraContext 安卓下返回前一页面后调用无效问题 反馈详情
+F 修复 API wx.scanCode 三端扫码返回 scanType 不一致问题 反馈详情
+F 修复 API wx.previewImage 安卓下闪退问题 反馈详情
+F 修复 API wx.writeFile iOS 下 encoding=hex 时调用失败问题
+F 修复 API wx.showMoal 安卓下内容过长时，头部内容会无法显示问题 反馈详情
+F 修复 API wx.chooseImage iOS 下选择 iCloud 图片时，返回数组可能丢失 iCloud 图片的问题 反馈详情
+F 修复 API wx.showModal 安卓点击模态框外部可以取消的问题 反馈详情
+F 修复 API wx.showModal 安卓点击 back 键取消情况下，cancel 返回了 false 问题
+F 修复 API wx.chooseImage iOS 下调用选择图片并压缩时，图片乱序的问题
+F 修复 API wx.getRecorderManager 在安卓下录音暂停两次之后停止，返回时长不正确的问题 反馈详情
+F 修复 API wx.hideLoading可以关闭wx.showToast的弹窗问题 反馈详情
+F 修复 API canvasContext.drawImage 在安卓上绘制错误问题
+F 修复 API updateManager.onCheckForUpdate 安卓某些场景下不触发的问题
+F 修复 API BackgroundAudioManager iOS 语音下载本地在 4G 环境无法播放问题 反馈详情
+F 修复 小游戏 BannerAd 下载卡片点击 button 样式下移问题
+F 修复 小游戏 RewardedVideoAd 跳转小游戏返回时会出现关闭广告样式与退出按钮重叠的问题
+F 修复 小游戏 API onTouch* 触摸事件时间戳参数名称不一致问题 反馈详情
+F 修复 安卓从分享页面进入小程序，进入下一级页面，再点右上回到首页，tabBar 不显示问题 反馈详情
+F 修复 安卓强制更新的对话框可以点击蒙层取消的问题 反馈详情
+F 修复 小游戏 开放数据域下设置 image.onload 为 null 报错问题
+```
+
 ### 2018.07.23 v24 基础库更新（2.2.1）
 1. `F` 修复 远程调试模式下，基础库调用 accessSync 引起的卡顿问题
 2. `F` 修复 组件 `<video>` iOS系统其中一个 `<video>` 组件全屏退出后其他 `<video>` 组件展示异常的问题
