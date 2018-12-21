@@ -1,4 +1,4 @@
-@import "../../../component/pages/switch/switch.wxss";
+@import "../../pages/get-system-info/get-system-info.wxss";
 
 @import "../../../../app.wxss";
 

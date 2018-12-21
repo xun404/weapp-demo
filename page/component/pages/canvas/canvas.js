@@ -21,12 +21,9 @@ Page({
         var t = this.position;
         t.x += t.vx, t.y += t.vy, t.x >= 300 && (t.vx = -2), t.x <= 7 && (t.vx = 2), t.y >= 300 && (t.vy = -2), 
         t.y <= 7 && (t.vy = 2);
-        var n = wx.createContext();
+        var n = wx.createCanvasContext("canvas");
         a(t.x, 150), a(150, t.y), a(300 - t.x, 150), a(150, 300 - t.y), a(t.x, t.y), a(300 - t.x, 300 - t.y), 
-        a(t.x, 300 - t.y), a(300 - t.x, t.y), wx.drawCanvas({
-            canvasId: "canvas",
-            actions: n.getActions()
-        });
+        a(t.x, 300 - t.y), a(300 - t.x, t.y), n.draw();
     },
     onUnload: function() {
         clearInterval(this.interval);

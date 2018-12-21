@@ -1,6 +1,46 @@
 # weapp-demo
 ## 微信小程序官方组件展示(持续更新)
 
+[查看小程序基础库更新日志](https://developers.weixin.qq.com/miniprogram/dev/framework/release.html)
+
+### v2.4.2 (2018.12.04)
+
+```
+U 更新 API SelectorQuery 支持选取 VideoContext、CanvasContext、LivePlayerContext、MapContext 详情
+F 修复 框架 iOS 10.0.2 某些情况下 crash 的问题
+F 修复 框架 存在 tabbar 时进行 reLaunch 没有对 tabbar 其他页面执行 unload 反馈详情
+F 修复 框架 异步方法中的错误，上报后显示错误的页面和方法的问题 反馈详情
+F 修复 框架 module.export 为 falsy 值时 require 返回 undefined 反馈详情
+F 修复 组件 <live-pusher> 工具上出现两次录音授权弹窗的问题 反馈详情
+F 修复 组件 <map> 工具上显示鉴权失败的问题 反馈详情
+F 修复 组件 <video> 工具上使用 setData 设置 src 无效的问题 反馈详情
+F 修复 组件 <input> iOS 下更新 value 失效的问题 反馈详情
+F 修复 组件 <image> iOS 下圆形的样式会先闪一下方形的问题
+F 修复 API wx.previewImage 请求时没有带小程序的 referer 反馈详情
+F 修复 API RequestTask.abort 不生效的问题
+```
+
+### v2.4.1 (2018.11.21)
+
+```
+U 更新 插件 插件支持云开发 详情
+U 更新 插件 改进插件功能页的取消回调
+U 更新 组件 <rich-text> 支持连续空格 详情
+U 更新 组件 <progress> 增加动画完成事件 详情
+F 修复 框架 iOS下 原生组件插入<scroll-view> 等滚动元素，会导致小程序 webview 无法回收的问题
+F 修复 框架 rpx 负数转换和正数不一致的问题 反馈详情
+F 修复 框架 分享完成拿到 shareTicket 为 undefined 的问题
+F 修复 组件 <video> iOS 下全屏卡死的问题
+F 修复 组件 <official-account> 扫体验版二维码进入小程序不显示的问题
+F 修复 组件 <swiper> 滑动导致卡死的问题
+F 修复 组件 <video> iOS 下 initial-time 失效的问题 反馈详情
+F 修复 API wx.off* 未能正确取消绑定监听的问题
+F 修复 API wx.canIUse 未能正确判断部分新增接口的问题
+F 修复 API MapContext.getScale 开发者工具上获取不准确的问题
+F 修复 API InnerAudioContext 获取 paused 值不准确的问题
+F 修复 API iOS 下 wx.getLocation 没读取入参 altitude 的内容的问题
+```
+
 ### 2018.09.10 v29 基础库更新（2.3.0）
 
 ```

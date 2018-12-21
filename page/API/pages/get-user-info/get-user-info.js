@@ -1,5 +1,3 @@
-var e = getApp();
-
 Page({
     onShareAppMessage: function() {
         return {
@@ -10,21 +8,12 @@ Page({
     data: {
         hasUserInfo: !1
     },
-    getUserInfo: function() {
-        function s() {
-            wx.getUserInfo({
-                success: function(e) {
-                    n.setData({
-                        hasUserInfo: !0,
-                        userInfo: e.userInfo
-                    });
-                }
-            });
-        }
-        var n = this;
-        !1 === e.globalData.hasLogin ? wx.login({
-            success: s
-        }) : s();
+    getUserInfo: function(e) {
+        var s = e.detail.userInfo;
+        this.setData({
+            userInfo: s,
+            hasUserInfo: !0
+        });
     },
     clear: function() {
         this.setData({

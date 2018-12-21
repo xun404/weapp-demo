@@ -1,4 +1,4 @@
-@import "../../../component/pages/switch/switch.wxss";
+@import "../get-system-info/get-system-info.wxss";
 
 input {
     width: 100%;

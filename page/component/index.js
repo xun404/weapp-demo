@@ -1,4 +1,7 @@
 Page({
+    onShow: function() {
+        wx.reportAnalytics("enter_home_programmatically", {});
+    },
     onShareAppMessage: function() {
         return {
             title: "小程序官方组件展示",
@@ -52,6 +55,6 @@ Page({
         for (var a = e.currentTarget.id, i = this.data.list, n = 0, t = i.length; n < t; ++n) i[n].id === a ? i[n].open = !i[n].open : i[n].open = !1;
         this.setData({
             list: i
-        });
+        }), wx.reportAnalytics("click_view_programmatically", {});
     }
 });

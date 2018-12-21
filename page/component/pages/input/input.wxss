@@ -1,4 +1,4 @@
-@import "../switch/switch.wxss";
+@import "../../../API/pages/get-system-info/get-system-info.wxss";
 
 .page-section {
     margin-bottom: 20rpx;

@@ -26,7 +26,7 @@ Page({
                 url: e,
                 method: "POST",
                 data: {
-                    formId: o,
+                    form_id: o,
                     openid: t,
                     formData: i
                 },
